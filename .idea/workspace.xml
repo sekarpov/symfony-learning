@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="aad90fd1-7d2e-4a15-8f3c-6be42b348eb6" name="Default Changelist" comment="" />
+    <list default="true" id="aad90fd1-7d2e-4a15-8f3c-6be42b348eb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -84,12 +101,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,18 +118,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612214992548</updated>
-      <workItem from="1612214993653" duration="6275000" />
+      <workItem from="1612214993653" duration="6459000" />
+      <workItem from="1612272445786" duration="2052000" />
+      <workItem from="1612274902467" duration="3000" />
+      <workItem from="1612274916151" duration="3923000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="749" y="263" key="NewPhpClassDialog" timestamp="1612264180942">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state x="740" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612275878828">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="740" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1854.0.1854.1080/66.0.1854.1080@66.0.1854.1080" timestamp="1612275878828" />
+    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1612278507231">
+      <screen x="66" y="0" width="1854" height="1080" />
     </state>
     <state x="749" y="263" key="NewPhpClassDialog/-1853.0.1853.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1612264180942" />
+    <state x="748" y="263" key="NewPhpClassDialog/-1854.0.1854.1080/66.0.1854.1080@66.0.1854.1080" timestamp="1612278507231" />
+    <state x="494" y="185" key="SettingsEditor" timestamp="1612274889914">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state x="494" y="185" key="SettingsEditor/-1854.0.1854.1080/66.0.1854.1080@66.0.1854.1080" timestamp="1612274889914" />
     <state x="656" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1612264838370">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
