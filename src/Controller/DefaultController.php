@@ -6,7 +6,9 @@ use App\Entity\User;
 use App\Services\GiftsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -19,13 +21,22 @@ class DefaultController extends AbstractController
     /**
      * @Route("/default", name="default")
      */
-    public function index(GiftsService $gifts): Response
+    public function index(GiftsService $gifts, Request $request, SessionInterface $session): Response
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
 
-        $this->addFlash('notice', 'Your change were saved');
+//        dd($request->cookies->get('PHPSESSID'));
 
-        $this->addFlash('warning', ' Warning message');
+        $session->set('name', 'session value');
+//        $session->remove('name');
+//        $session->clear();
+        if($session->has('name')){
+            dd($session->get('name'));
+        }
+
+//        $this->addFlash('notice', 'Your change were saved');
+//
+//        $this->addFlash('warning', ' Warning message');
 
 //        $cookie = new Cookie(
 //            'my_cookie', // Cookie name
@@ -37,8 +48,8 @@ class DefaultController extends AbstractController
 //        $res->headers->setCookie($cookie);
 //        $res->send();
 
-        $res = new Response();
-        $res->headers->clearCookie('my_cookie');
+//        $res = new Response();
+//        $res->headers->clearCookie('my_cookie');
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
