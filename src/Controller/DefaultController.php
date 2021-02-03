@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Services\GiftsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -25,6 +26,19 @@ class DefaultController extends AbstractController
         $this->addFlash('notice', 'Your change were saved');
 
         $this->addFlash('warning', ' Warning message');
+
+//        $cookie = new Cookie(
+//            'my_cookie', // Cookie name
+//            'cookie value', // Cookie value
+//            time() + ( 2 * 365 * 24 * 60 * 60 ) // Expires after 2 years
+//        );
+//
+//        $res = new Response();
+//        $res->headers->setCookie($cookie);
+//        $res->send();
+
+        $res = new Response();
+        $res->headers->clearCookie('my_cookie');
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
