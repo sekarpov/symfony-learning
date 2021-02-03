@@ -21,35 +21,16 @@ class DefaultController extends AbstractController
     /**
      * @Route("/default", name="default")
      */
-    public function index(GiftsService $gifts, Request $request, SessionInterface $session): Response
+    public function index(GiftsService $gifts, Request $request): Response
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
 
-//        dd($request->cookies->get('PHPSESSID'));
+//        dd($request->get('page', 'default'));
 
-        $session->set('name', 'session value');
-//        $session->remove('name');
-//        $session->clear();
-        if($session->has('name')){
-            dd($session->get('name'));
-        }
-
-//        $this->addFlash('notice', 'Your change were saved');
-//
-//        $this->addFlash('warning', ' Warning message');
-
-//        $cookie = new Cookie(
-//            'my_cookie', // Cookie name
-//            'cookie value', // Cookie value
-//            time() + ( 2 * 365 * 24 * 60 * 60 ) // Expires after 2 years
-//        );
-//
-//        $res = new Response();
-//        $res->headers->setCookie($cookie);
-//        $res->send();
-
-//        $res = new Response();
-//        $res->headers->clearCookie('my_cookie');
+        dd($request->server->get('HTTP_HOST'));
+        $request->isXmlHttpRequest(); // is it an Ajax request?
+        $request->request->get('pame');
+        $request->files->get('foo');
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
