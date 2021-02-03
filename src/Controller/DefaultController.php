@@ -20,11 +20,11 @@ class DefaultController extends AbstractController
      */
     public function index(GiftsService $gifts): Response
     {
-//        $users = ['Adam', 'Robert', 'John', 'Susan'];
-        $entityManager = $this->getDoctrine()->getManager();
-
-
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        $this->addFlash('notice', 'Your change were saved');
+
+        $this->addFlash('warning', ' Warning message');
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
