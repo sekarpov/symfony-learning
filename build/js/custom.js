@@ -1,2 +1,6 @@
-const $ = require('jquery');
-global.$ = global.jQuery = $;
+// const $ = require('jquery');
+// global.$ = global.jQuery = $;
+
+$(document).ready(function (){
+    alert(1);
+});
