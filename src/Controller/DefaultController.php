@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 
 class DefaultController extends AbstractController
@@ -80,5 +81,74 @@ class DefaultController extends AbstractController
     {
         return new Response('Translated routes');
     }
+
+    /**
+     * Генерация URL
+     *
+     * @Route("/generate-url/{param?}", name="generate_url")
+     */
+    public function generate_url()
+    {
+        dd($this->generateUrl(
+            'generate_url',
+            [
+                'param' => 10
+            ],
+            UrlGeneratorInterface::ABSOLUTE_URL
+        ));
+    }
+
+    /**
+     * Скачивание файла
+     *
+     * @Route("/download")
+     */
+    public function download()
+    {
+        $path = $this->getParameter('download_directory');
+        return $this->file($path.'file.pdf');
+    }
+
+    /**
+     * Редирект
+     *
+     * @Route("/redirect-test")
+     */
+    public function redirectTest()
+    {
+        return $this->redirectToRoute('route_to_redirect', ['param' => 10]);
+    }
+
+    /**
+     * @Route("/url-to-redirect/{param?}", name="route_to_redirect")
+     */
+    public function methodToRedirect()
+    {
+        dd('Test redirection');
+    }
+
+    /**
+     * Ретрансляция на другие контроллеры и методы
+     *
+     * @Route("/forward-to-controller")
+     */
+    public function forwardToController()
+    {
+        $response = $this->forward(
+          'App\Controller\DefaultController::methodToForwardTo',
+            ['param'=> '1']
+        );
+
+        return $response;
+    }
+
+    /**
+     * @Route("/url-to-forward-to/{param?}", name="route_to_forward_to")
+     */
+    public function methodToForwardTo($param)
+    {
+        dd('Test controller forward - ' . $param);
+    }
+
 
 }
