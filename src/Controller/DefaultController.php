@@ -25,17 +25,11 @@ class DefaultController extends AbstractController
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
 
-//        dd($request->get('page', 'default'));
-
-        dd($request->server->get('HTTP_HOST'));
-        $request->isXmlHttpRequest(); // is it an Ajax request?
-        $request->request->get('pame');
-        $request->files->get('foo');
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
             'users' => $users,
-            'random_gift' => $gifts->gifts,
+            'random_gifeeet' => $gifts->gifts
         ]);
     }
 

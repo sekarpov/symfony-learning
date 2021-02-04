@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2a9db24aabe4255f11f88a5b61b3622",
+    "content-hash": "c5cc0ef289e56fa38e6d65f8dc61c22a",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -3067,16 +3067,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.11.0",
+            "version": "v1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "ceb2b4e612bd0b4bb36a4d7fb2e800c861652f48"
+                "reference": "394f3e4dc03ea2a5448aeedc9658c8b596b1d39f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/ceb2b4e612bd0b4bb36a4d7fb2e800c861652f48",
-                "reference": "ceb2b4e612bd0b4bb36a4d7fb2e800c861652f48",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/394f3e4dc03ea2a5448aeedc9658c8b596b1d39f",
+                "reference": "394f3e4dc03ea2a5448aeedc9658c8b596b1d39f",
                 "shasum": ""
             },
             "require": {
@@ -3115,7 +3115,7 @@
             "description": "Composer plugin for Symfony",
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
-                "source": "https://github.com/symfony/flex/tree/v1.11.0"
+                "source": "https://github.com/symfony/flex/tree/v1.12.1"
             },
             "funding": [
                 {
@@ -3131,7 +3131,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-03T10:57:35+00:00"
+            "time": "2021-02-02T16:29:45+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -5149,47 +5149,41 @@
         },
         {
             "name": "twig/extra-bundle",
-            "version": "v3.2.1",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/twig-extra-bundle.git",
-                "reference": "07c94c7dcfe7e49abd45d4083ca5544a34969714"
+                "reference": "a7c5799cf742ab0827f5d32df37528ee8bf5a233"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/07c94c7dcfe7e49abd45d4083ca5544a34969714",
-                "reference": "07c94c7dcfe7e49abd45d4083ca5544a34969714",
+                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/a7c5799cf742ab0827f5d32df37528ee8bf5a233",
+                "reference": "a7c5799cf742ab0827f5d32df37528ee8bf5a233",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3|^8.0",
                 "symfony/framework-bundle": "^4.3|^5.0",
                 "symfony/twig-bundle": "^4.3|^5.0",
-                "twig/twig": "^3.2"
+                "twig/twig": "^2.4|^3.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^4.4.9|^5.0.9",
-                "twig/cache-extra": "^3.0",
                 "twig/cssinliner-extra": "^2.12|^3.0",
                 "twig/html-extra": "^2.12|^3.0",
                 "twig/inky-extra": "^2.12|^3.0",
                 "twig/intl-extra": "^2.12|^3.0",
-                "twig/markdown-extra": "^2.12|^3.0",
-                "twig/string-extra": "^2.12|^3.0"
+                "twig/markdown-extra": "^2.12|^3.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Twig\\Extra\\TwigExtraBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
+                    "Twig\\Extra\\TwigExtraBundle\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -5211,7 +5205,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.2.1"
+                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.1.1"
             },
             "funding": [
                 {
@@ -5223,20 +5217,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-05T15:24:51+00:00"
+            "time": "2020-05-21T09:56:39+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.2.1",
+            "version": "v2.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f795ca686d38530045859b0350b5352f7d63447d"
+                "reference": "8bc568d460d88b25c00c046256ec14a787ea60d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f795ca686d38530045859b0350b5352f7d63447d",
-                "reference": "f795ca686d38530045859b0350b5352f7d63447d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8bc568d460d88b25c00c046256ec14a787ea60d9",
+                "reference": "8bc568d460d88b25c00c046256ec14a787ea60d9",
                 "shasum": ""
             },
             "require": {
@@ -5251,10 +5245,13 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "2.14-dev"
                 }
             },
             "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                },
                 "psr-4": {
                     "Twig\\": "src/"
                 }
@@ -5287,7 +5284,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.2.1"
+                "source": "https://github.com/twigphp/Twig/tree/v2.14.3"
             },
             "funding": [
                 {
@@ -5299,7 +5296,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-05T15:40:36+00:00"
+            "time": "2021-01-05T15:34:33+00:00"
         }
     ],
     "packages-dev": [],
