@@ -2,10 +2,6 @@
 
 {% block title %}Hello {{ controller_name}}!{% endblock %}
 
-{% set users = [{name: 'John'}, {name: 'Susan'}, {name: 'Robert'}] %}
-
-{% set string = "some string \n from \n database" %}
-
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -21,20 +17,9 @@
         <li>Your template at <code><a href="{{ 'D:/OpenServer/domains/my_project_name/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
     </ul>
 
-    {{ path('home') }} <br>
-    {{ url('home') }} <br>
-    {{ asset('images/image.jpg') }} <br>
-    {{ absolute_url('images/image.jpg') }} <br>
+    <p>The google tracking code is: {{ ga_code }}</p>
 
-    <img src="{{ absolute_url(asset('images/image.jpg')) }}" alt="Symfony 4">
+
 </div>
-
-{% endblock %}
-
-{% block javascripts %}
-    <script>
-        var route = "{{ string|escape('js') }}";
-        alert(route);
-    </script>
 
 {% endblock %}
