@@ -13,9 +13,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    public function __construct(GiftsService $gifts)
+    public function __construct($logger)
     {
-        $gifts->gifts = ['a', 'b', 'c'];
+        // use $logger service
     }
 
     /**
@@ -32,7 +32,7 @@ class DefaultController extends AbstractController
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
             'users' => $users,
-            'random_gifeeet' => $gifts->gifts
+            'random_gift' => $gifts->gifts
         ]);
     }
 
