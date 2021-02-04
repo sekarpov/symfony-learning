@@ -19,6 +19,12 @@
 
     <p>The google tracking code is: {{ ga_code }}</p>
 
+    {{ app.user }}
+    {{ app.request.get('param') }}
+    {{ app.environment }}
+    <pre>
+        {{ dump(app.session) }}
+    </pre>
 
 </div>
 
