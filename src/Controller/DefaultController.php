@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/page", name="default", name="home")
+     * @Route("/home", name="default", name="home")
      */
     public function index(Request $request): Response
     {
@@ -37,5 +37,14 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    public function mostPopularPosts($number = 3)
+    {
+        // database call
+        $posts = ['post1', 'post2', 'post3', 'post4'];
+
+        return $this->render('default/most_popular_posts.html.twig', [
+            'posts' => $posts
+        ]);
+    }
 
 }
