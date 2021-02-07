@@ -22,12 +22,17 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        $repository = $this->getDoctrine()->getRepository(User::class);
-//        $user = $repository->find(1);
-//        $user = $repository->findOneBy(['name' => 'Name - 1']);
-//        $user = $repository->findOneBy(['name' => 'Name - 1', 'id' => 1]);
-//        $user = $repository->findBy(['name' => 'Robert'], ['id' => 'DESC']);
-        $user = $repository->findAll();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $id = 1;
+        $user = $entityManager->getRepository(User::class)->find($id);
+        if(!$user) {
+            throw $this->createNotFoundException(
+              'No user found for id ' . $id
+            );
+        }
+        $user->setName('New user name!');
+        $entityManager->flush();
         dd($user);
 
         return $this->render('default/index.html.twig', [
