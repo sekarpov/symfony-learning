@@ -26,14 +26,9 @@ class DefaultController extends AbstractController
 
         $id = 1;
         $user = $entityManager->getRepository(User::class)->find($id);
-        if(!$user) {
-            throw $this->createNotFoundException(
-              'No user found for id ' . $id
-            );
-        }
-        $user->setName('New user name!');
+
+        $entityManager->remove($user);
         $entityManager->flush();
-        dd($user);
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
