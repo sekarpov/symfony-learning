@@ -30,6 +30,12 @@ class DefaultController extends AbstractController
 //            throw $this->createNotFoundException("The users do not exist");
 //        }
 
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = new User();
+        $user->setName('Robert');
+        $entityManager->persist($user);
+        $entityManager->flush();
+        dd('A new user was saved in the id of ' . $user->getId());
 
 
         return $this->render('default/index.html.twig', [
@@ -37,14 +43,5 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    public function mostPopularPosts($number = 3)
-    {
-        // database call
-        $posts = ['post1', 'post2', 'post3', 'post4'];
-
-        return $this->render('default/most_popular_posts.html.twig', [
-            'posts' => $posts
-        ]);
-    }
 
 }

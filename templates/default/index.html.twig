@@ -19,11 +19,6 @@
 
     <p>The google tracking code is: {{ ga_code }}</p>
 
-    {{ render(controller(
-        'App\\Controller\\DefaultController::mostPopularPosts',
-        { 'number': 5 }
-    )) }}
-
 </div>
 
 {% endblock %}
