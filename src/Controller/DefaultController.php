@@ -22,13 +22,6 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-
-        $id = 1;
-        $user = $entityManager->getRepository(User::class)->find($id);
-
-        $entityManager->remove($user);
-        $entityManager->flush();
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
