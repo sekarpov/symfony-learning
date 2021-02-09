@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
 //            $user->addVideo($video);
 //            $entityManager->persist($video);
 //        }
-
+//
 //        $entityManager->persist($user);
 //        $entityManager->flush();
 
@@ -58,15 +58,23 @@ class DefaultController extends AbstractController
         /*
          * Достаем видео у найденнего пользователя
          */
+//        $user = $this->getDoctrine()
+//                ->getRepository(User::class)
+//                ->find(1);
+//
+//        $result = [];
+//        foreach ($user->getVideos() as $video) {
+//            $result[] = $video->getTitle();
+//        }
+//        dd($result);
+
         $user = $this->getDoctrine()
                 ->getRepository(User::class)
                 ->find(1);
 
-        $result = [];
-        foreach ($user->getVideos() as $video) {
-            $result[] = $video->getTitle();
-        }
-        dd($result);
+        $entityManager->remove($user);
+        $entityManager->flush();
+        dd($user);
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
