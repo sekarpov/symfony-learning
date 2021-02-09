@@ -75,9 +75,16 @@ class DefaultController extends AbstractController
                 ->getRepository(User::class)
                 ->find(1);
 
-        $entityManager->remove($user);
+        $video = $this->getDoctrine()
+                ->getRepository(Video::class)
+                ->find(1);
+
+        $user->removeVideo($video);
         $entityManager->flush();
-        dd($user);
+
+//        $entityManager->remove($user);
+//        $entityManager->flush();
+//        dd($user);
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
