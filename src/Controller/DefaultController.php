@@ -68,6 +68,9 @@ class DefaultController extends AbstractController
 //        }
 //        dd($result);
 
+        /*
+         * Удаление пользователя со всеми его связанными видео
+         */
         $user = $this->getDoctrine()
                 ->getRepository(User::class)
                 ->find(1);
