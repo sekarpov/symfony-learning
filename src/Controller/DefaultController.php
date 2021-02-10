@@ -25,20 +25,43 @@ class DefaultController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $user = new User();
-        $user->setName('John');
+        /*
+         * Создаем 4х пользователей
+         */
+//        for ($i = 1; $i <= 4; $i++) {
+//            $user = new User();
+//            $user->setName('Robert-' . $i);
+//            $entityManager->persist($user);
+//        }
+//
+//        $entityManager->flush();
+//        dd('Last user id = ' . $user->getId());
 
-        $address = new Address();
-        $address->setStreet('street');
-        $address->setNumber(23);
+        /*
+         * Выбираем каждого
+         */
+        $user1 = $entityManager->getRepository(User::class)->find(1);
+        $user2 = $entityManager->getRepository(User::class)->find(2);
+        $user3 = $entityManager->getRepository(User::class)->find(3);
+        $user4 = $entityManager->getRepository(User::class)->find(4);
 
-        $user->setAddress($address);
+        /*
+         * Делаем подписку 1 пользователя к остальным 3м
+         */
+//        $user1->addFollowed($user2);
+//        $user1->addFollowed($user3);
+//        $user1->addFollowed($user4);
+//        $entityManager->flush();
 
-        $entityManager->persist($user);
-//        $entityManager->persist($address);// требуется, если для объекта пользователя не задана опция "cascade: persist", иначе можно обойтись без нее
-        $entityManager->flush();
+        /*
+         * Смотрим пользователей к которым подписан user1
+         */
+//        dd($user1->getFollowed()->count());
 
-        dd($user->getAddress()->getStreet());
+        /*
+         * Смотрим сколько подписано пользователей к user2
+         */
+        dd($user2->getFollowing()->count());
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
