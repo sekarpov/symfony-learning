@@ -26,42 +26,34 @@ class DefaultController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
 
         /*
-         * Создаем 4х пользователей
+         * Создаем пользователя и несколько видео
          */
-//        for ($i = 1; $i <= 4; $i++) {
-//            $user = new User();
-//            $user->setName('Robert-' . $i);
-//            $entityManager->persist($user);
+//        $user = new User();
+//        $user->setName('Robert');
+//
+//        for ($i = 1; $i <= 3; $i++) {
+//            $video = new Video();
+//            $video->setTitle('Video number - ' . $i);
+//            $user->addVideo($video);
+//            $entityManager->persist($video);
 //        }
 //
-//        $entityManager->flush();
-//        dd('Last user id = ' . $user->getId());
-
-        /*
-         * Выбираем каждого
-         */
-        $user1 = $entityManager->getRepository(User::class)->find(1);
-        $user2 = $entityManager->getRepository(User::class)->find(2);
-        $user3 = $entityManager->getRepository(User::class)->find(3);
-        $user4 = $entityManager->getRepository(User::class)->find(4);
-
-        /*
-         * Делаем подписку 1 пользователя к остальным 3м
-         */
-//        $user1->addFollowed($user2);
-//        $user1->addFollowed($user3);
-//        $user1->addFollowed($user4);
+//        $entityManager->persist($user);
 //        $entityManager->flush();
 
         /*
-         * Смотрим пользователей к которым подписан user1
+         * Такой вариант поиска lazy load ленивая загрузка, означает, что связанных с пользователем видео не будут автоматически добавлены в результат поиска, но это не означает что мы не можем получить видео этого пользователя.
          */
-//        dd($user1->getFollowed()->count());
+//        $user = $entityManager->getRepository(User::class)->find(1);
+//        dd($user);
 
         /*
-         * Смотрим сколько подписано пользователей к user2
+         * Создаем свой метод в репозитории, который не использует ленивую загрузку.
+         * Это так называемая активная загрузка(eager loading), реализовано с помощью(->addSelect('v'))
          */
-        dd($user2->getFollowing()->count());
+        $user = $entityManager->getRepository(User::class)->findWithVideos(1);
+        dd($user);
+
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
