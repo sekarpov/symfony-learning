@@ -35,11 +35,6 @@ class User
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Video::class, mappedBy="author", cascade={"remove"}, orphanRemoval=true )
-     */
-    private $videos;
-
-    /**
      * @ORM\OneToOne(targetEntity=Address::class, cascade={"persist", "remove"})
      */
     private $address;
@@ -74,36 +69,6 @@ class User
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Video[]
-     */
-    public function getVideos(): Collection
-    {
-        return $this->videos;
-    }
-
-    public function addVideo(Video $video): self
-    {
-        if (!$this->videos->contains($video)) {
-            $this->videos[] = $video;
-            $video->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeVideo(Video $video): self
-    {
-        if ($this->videos->removeElement($video)) {
-            // set the owning side to null (unless already changed)
-            if ($video->getAuthor() === $this) {
-                $video->setAuthor(null);
-            }
-        }
 
         return $this;
     }

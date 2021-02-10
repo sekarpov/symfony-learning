@@ -8,51 +8,38 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=VideoRepository::class)
  */
-class Video
+class Video extends File
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $format;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="videos")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $author;
+    private $duration;
 
-    public function getId(): ?int
+    public function getFormat(): ?string
     {
-        return $this->id;
+        return $this->format;
     }
 
-    public function getTitle(): ?string
+    public function setFormat(string $format): self
     {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
+        $this->format = $format;
 
         return $this;
     }
 
-    public function getAuthor(): ?User
+    public function getDuration(): ?int
     {
-        return $this->author;
+        return $this->duration;
     }
 
-    public function setAuthor(?User $author): self
+    public function setDuration(int $duration): self
     {
-        $this->author = $author;
+        $this->duration = $duration;
 
         return $this;
     }

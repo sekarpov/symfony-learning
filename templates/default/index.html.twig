@@ -19,6 +19,12 @@
 
     <p>The google tracking code is: {{ ga_code }}</p>
 
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }} - you won {{ random_gift[loop.index0] }}</li>
+        {% endfor %}
+    </ul>
+
 </div>
 
 {% endblock %}
