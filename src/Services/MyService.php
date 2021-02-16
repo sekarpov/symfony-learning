@@ -6,7 +6,9 @@ namespace App\Services;
 
 class MyService
 {
-    use OptionalServiceTrait;
+
+    public $logger;
+    public $my;
 
     public function __construct()
     {
@@ -15,7 +17,8 @@ class MyService
 
     public function someAction()
     {
-        dump($this->service->doSomething2());
-   }
+        dump($this->logger);
+        dump($this->my);
+    }
 
 }
