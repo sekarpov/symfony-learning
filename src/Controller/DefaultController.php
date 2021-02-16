@@ -30,8 +30,7 @@ class DefaultController extends AbstractController
     public function index(MyService $service): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-
-        $service->someAction();
+        $service->secService->someMethod();
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
