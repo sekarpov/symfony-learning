@@ -12,6 +12,7 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false
         bind:
             $globalParam: 'global param to be used by all services defined in this file'
 
@@ -38,5 +39,6 @@ services:
             $logger: '@monolog.logger.doctrine'
 
     App\Services\MyService:
+        autowire: false
         arguments:
             $second_service: '@App\Services\MySecondService'

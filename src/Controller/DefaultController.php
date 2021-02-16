@@ -9,6 +9,7 @@ use App\Entity\Pdf;
 use App\Entity\User;
 use App\Entity\Video;
 use App\Services\GiftsService;
+use App\Services\MySecondService;
 use App\Services\MyService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +27,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(Request $request, MyService $service): Response
+    public function index(MyService $second_service): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
 
