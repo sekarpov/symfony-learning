@@ -27,9 +27,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(MyService $second_service): Response
+    public function index(MyService $service): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
+
+        $service->someAction();
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
