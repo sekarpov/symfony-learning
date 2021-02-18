@@ -11,6 +11,7 @@ use App\Entity\Video;
 use App\Services\GiftsService;
 use App\Services\MySecondService;
 use App\Services\MyService;
+use App\Services\ServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,13 +29,10 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, ServiceInterface $service): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $user = $entityManager->getRepository(User::class)->find(1);
-        $user->setName('Rob');
-        $entityManager->persist($user);
-        $entityManager->flush();
+
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
         ]);

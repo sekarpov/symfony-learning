@@ -6,7 +6,7 @@ namespace App\Services;
 
 use Doctrine\ORM\Event\PostFlushEventArgs;
 
-class MyService
+class MyService implements ServiceInterface
 {
 
     public function __construct()
@@ -14,15 +14,6 @@ class MyService
         dump('Hi! I am MyService.');
     }
 
-    public function postFlush(PostFlushEventArgs $args)
-    {
-        dump('postFlush method');
-        dump($args);
-    }
 
-    public function clear()
-    {
-        dump('clear ...');
-    }
 
 }

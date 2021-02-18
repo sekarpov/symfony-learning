@@ -1,0 +1,10 @@
+imports:
+  - { resource: services.yaml }
+
+services:
+  App\Services\ServiceInterface: '@App\Services\MySecondService'
+
+# Этот services.yaml меняет поведение для окружения heroku, а за счет ServiceInterface нам не надо ничего менять в
+#  нашем коде.
+#  APP_ENV=heroku
+#  APP_DEBUG=true

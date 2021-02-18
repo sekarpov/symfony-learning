@@ -38,7 +38,4 @@ services:
         bind:
             $logger: '@monolog.logger.doctrine'
 
-    App\Services\MyService:
-        tags:
-            - { name: doctrine.event_listener, event: postFlush } # при записи в БД будет вызван метод postFlush в MyService
-            - { name: kernel.cache_clearer } # вызов метода clear в MyService при вызове php bin/console cache:clear
+    App\Services\ServiceInterface: '@App\Services\MyService'
