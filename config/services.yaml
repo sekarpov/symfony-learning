@@ -38,9 +38,9 @@ services:
         bind:
             $logger: '@monolog.logger.doctrine'
 
-    App\Services\MyService:
+    app.myservice:
+        class: App\Services\MyService
         arguments:
-            $service: '@App\Services\MySecondService'
+            $one: 'something'
 
-    App\Service\MySecondService:
-        lazy: true
+    App\Services\MyService: '@app.myservice'

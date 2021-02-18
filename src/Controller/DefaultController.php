@@ -12,6 +12,7 @@ use App\Services\GiftsService;
 use App\Services\MySecondService;
 use App\Services\MyService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,11 +28,9 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(MyService $service): Response
+    public function index(MyService $service, ContainerInterface $container): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $service->secService->someMethod();
-
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
         ]);

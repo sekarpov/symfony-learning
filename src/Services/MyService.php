@@ -7,10 +7,10 @@ namespace App\Services;
 class MyService
 {
 
-    public function __construct($service)
+    public function __construct($one)
     {
-        dump($service);
-        $this->secService = $service;
+        dump('Hi! I am MyService.');
+        dump($one);
     }
 
 }
