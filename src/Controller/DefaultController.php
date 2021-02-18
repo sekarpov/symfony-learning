@@ -28,9 +28,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(MyService $service, ContainerInterface $container): Response
+    public function index(Request $request): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(User::class)->find(1);
+        $user->setName('Rob');
+        $entityManager->persist($user);
+        $entityManager->flush();
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
