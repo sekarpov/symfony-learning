@@ -13,6 +13,7 @@ use App\Services\MySecondService;
 use App\Services\MyService;
 use App\Services\ServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,9 +30,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="default", name="home")
      */
-    public function index(Request $request, ServiceInterface $service): Response
+    public function index(Request $request): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
+
+        $cache = new FilesystemAdapter();
+        $posts = $cache->getItem('database.get_posts');
+        dump(unserialize($posts->get()));
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
